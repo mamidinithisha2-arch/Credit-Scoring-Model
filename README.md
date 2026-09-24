@@ -2,18 +2,16 @@
 
 ## Project Overview
 
-This project predicts whether a person is a good or bad credit risk using machine learning.
+This project predicts whether a person has good or bad credit risk using Machine Learning.
 
 The project uses the German Credit dataset from the UCI Machine Learning Repository.
 
-## Dataset
+## Objective
 
-- Dataset: German Credit
-- Number of records: 1000
-- Number of original features: 20
-- Target classes:
-  - 1 = Good Credit
-  - 0 = Bad Credit
+The main objective is to build a Machine Learning model that classifies credit applicants into:
+
+- Good Credit
+- Bad Credit
 
 ## Technologies Used
 
@@ -22,59 +20,40 @@ The project uses the German Credit dataset from the UCI Machine Learning Reposit
 - NumPy
 - Scikit-learn
 - Matplotlib
-- UCI ML Repository
+- UCI Machine Learning Repository
 
-## Machine Learning Algorithm
+## Machine Learning Model
 
-Logistic Regression is used as the classification algorithm.
+The project uses **Logistic Regression** for credit risk classification.
 
 ## Data Preprocessing
 
 The following steps were performed:
 
 1. Loaded the German Credit dataset.
-2. Checked for missing values.
-3. Converted the target values into binary classes.
-4. Converted categorical features into numerical features using one-hot encoding.
-5. Split the dataset into training and testing data.
-6. Applied feature scaling using StandardScaler.
+2. Converted the target values into Good Credit and Bad Credit classes.
+3. Applied one-hot encoding to categorical features.
+4. Split the dataset into training and testing data.
+5. Applied StandardScaler for feature scaling.
 
 ## Model Evaluation
 
-The model is evaluated using:
+The model was evaluated using Accuracy, Precision, Recall, F1 Score, and ROC-AUC.
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- ROC-AUC
-- Confusion Matrix
-- ROC Curve
+### Results
 
-## Project Structure
+| Metric | Score |
+|---|---:|
+| Accuracy | 71.00% |
+| Precision | 78.08% |
+| Recall | 81.43% |
+| F1 Score | 79.61% |
+| ROC-AUC | 0.75 |
+
+## Confusion Matrix
+
+The confusion matrix obtained from the test data was:
 
 ```text
-Credit_Scoring_Model/
-│
-├── credit_scoring.py
-├── README.md
-└── venv/
-```
-
-## How to Run
-
-Create and activate a virtual environment, then install the required libraries:
-
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn ucimlrepo
-```
-
-Run the project:
-
-```bash
-python credit_scoring.py
-```
-
-## Conclusion
-
-The project demonstrates how machine learning can be used for binary credit-risk classification. The model's performance is evaluated using multiple classification metrics and visualizations.
+[[28, 32],
+ [26, 114]]
